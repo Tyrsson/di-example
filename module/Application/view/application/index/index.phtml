@@ -3,6 +3,7 @@
  * @var Laminas\View\Renderer\PhpRenderer $this
  *
  */
+use Application\Utils\Debug;
 ?>
 <div class="jumbotron">
     <h1 class="display-4">Welcome to<br>Laminas MVC Skeleton Application</h1>
@@ -13,7 +14,12 @@
         This skeleton can serve as a simple starting point for you to begin
         building your application on Laminas MVC.
     </p>
-
+    <?php
+    if(isset($this->example)) {
+        Debug::dump($this->example, 'dump in index.phtml line: ' . __LINE__);
+    }
+    ?>
+    <a href="/application/json">View rendered via Json</a>
     <hr class="my-4">
 
     <a class="btn btn-primary btn-lg" href="https://github.com/laminas" target="_blank">

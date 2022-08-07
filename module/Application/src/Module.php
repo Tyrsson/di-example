@@ -1,5 +1,13 @@
 <?php
 
+/**
+ * The setup of the Listener and the Json strategy is not related to the Di
+ * However, I thought I would include it, since I know your team is using Json heavily.
+ * To test the json simplely type http(s)://<host>/application/json in your browser. and inspect the response.
+ * I included a controller trait to create an example of how to use traits in controllers
+ * without having the need to create controller plugins.
+ */
+
 declare(strict_types=1);
 
 namespace Application;
@@ -10,6 +18,8 @@ use Di\Service\MyFactoryExample;
 use Laminas\Di\Injector;
 use Laminas\Di\InjectorInterface;
 use Laminas\Mvc\MvcEvent;
+use Laminas\View\Strategy\JsonStrategy;
+use Laminas\View\View;
 
 class Module
 {
@@ -23,9 +33,13 @@ class Module
     {
         // get an instance of the service manager
         $serviceManager = $e->getApplication()->getServiceManager();
+        $eventManager   = $e->getApplication()->getEventManager();
+        // wire the listener, this is not related to the DI, its for another part of the example.
+        $eventManager->attach(MvcEvent::EVENT_RENDER, [$this, 'registerJsonStrategy'], 100);
         /** @var Injector $injector */
         $injector = $serviceManager->get(Injector::class); // call the injector directly
         /**
+         * To see where the aliases and default configuration for the Di is setup see the below classes.
          * /vendor/laminas/laminas-di/src/Module.php
          * /vendor/laminas/laminas-di/src/ConfigProvider.php
          *
@@ -40,6 +54,13 @@ class Module
         $myclassB         = $di->create('MyClass.B'); // get an instance of MyClass.B
         $myFactoryExample = $di->create(MyFactoryExample::class); // this works because the Di autowire factory jumped in to autowire it.
         //$myFactoryExample = $di->create('MyFactoryExample'); // This will fail because its not in the config
-        //var_dump($di); this works on my system, but due to the vast amount of data youre not gonna learn much from it
+    }
+
+    public function registerJsonStrategy(MvcEvent $e)
+    {
+        $container    = $e->getApplication()->getServicemanager();
+        $view         = $container->get(View::class);
+        $jsonStrategy = $container->get(JsonStrategy::class);
+        $jsonStrategy->attach($view->getEventManager(), 100);
     }
 }
