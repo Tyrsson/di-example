@@ -6,9 +6,8 @@
  * To use classes outside of the module, you need a use statement
  * like what was provided for the InvokableFactory.
  * then you use the short name of the class.
- * Also of note here is that we are using the same Factory for both the
- * the Example Model and the IndexController. Which factory is used
- * does not matter, as long as it is able to create and return and
+ * Also of note here is the use of the LazyControllerAbstractFactory.
+ * Which factory is used does not matter, as long as it is able to create and return and
  * instance of the object that is requested.
  *
  * - We did not have to add an additional route because the route
