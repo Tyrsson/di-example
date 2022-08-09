@@ -16,7 +16,16 @@
         "laminas/laminas-skeleton-installer": "^0.6",
         "laminas/laminas-mvc": "^3.1.1",
         "laminas/laminas-servicemanager": "3.16.0",
-        "laminas/laminas-di": "3.9.1"
+        "laminas/laminas-di": "3.9.1",
+        "laminas/laminas-dom": "^2.12",
+        "laminas/laminas-hydrator": "^4.5",
+        "laminas/laminas-escaper": "^2.10",
+        "laminas/laminas-db": "^2.15",
+        "laminas/laminas-coding-standard": "^2.3",
+        "laminas/laminas-session": "^2.13",
+        "laminas/laminas-permissions-acl": "^2.10",
+        "laminas/laminas-authentication": "^2.11",
+        "laminas/laminas-mvc-form": "^2.0"
     },
     "autoload": {
         "psr-4": {
@@ -57,7 +66,8 @@
     "config": {
         "allow-plugins": {
             "laminas/laminas-component-installer": true,
-            "laminas/laminas-skeleton-installer": true
+            "laminas/laminas-skeleton-installer": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true
         }
     }
 }
