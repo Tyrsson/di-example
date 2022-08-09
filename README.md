@@ -1,9 +1,7 @@
 
 # Important
 
-Please note that there is one missing component brick/varexporter due to its line
-endings being in crlf and I simply did not have the time to fix it. Everything else
-is vanilla. I ported the Di examples into this build and they can be found in module/Di.
+I ported the Di examples into this build and they can be found in module/Di.
 Example usage is in the module/Application/src/Module.php file. All of which has been tested
 via vscode and xdebug.
 Server: WampServer
