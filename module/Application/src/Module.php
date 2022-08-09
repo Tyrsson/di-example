@@ -12,13 +12,13 @@ declare(strict_types=1);
 
 namespace Application;
 
+use Application\View\Strategy\JsonStrategy;
 use Di\Service\Bar;
 use Di\Service\Foo;
 use Di\Service\MyFactoryExample;
 use Laminas\Di\Injector;
 use Laminas\Di\InjectorInterface;
 use Laminas\Mvc\MvcEvent;
-use Laminas\View\Strategy\JsonStrategy;
 use Laminas\View\View;
 
 class Module
