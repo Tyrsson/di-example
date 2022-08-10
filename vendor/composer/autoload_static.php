@@ -8,6 +8,8 @@ class ComposerStaticInita3244d27a7e85d1879656afd83deaa90
 {
     public static $files = array (
         'c9d07b32a2e02bc0fc582d4f0c1b56cc' => __DIR__ . '/..' . '/laminas/laminas-servicemanager/src/autoload.php',
+        '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
+        '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -19,6 +21,8 @@ class ComposerStaticInita3244d27a7e85d1879656afd83deaa90
         ),
         'S' => 
         array (
+            'Symfony\\Polyfill\\Mbstring\\' => 26,
+            'Symfony\\Component\\VarDumper\\' => 28,
             'SlevomatCodingStandard\\' => 23,
         ),
         'P' => 
@@ -55,6 +59,7 @@ class ComposerStaticInita3244d27a7e85d1879656afd83deaa90
             'Laminas\\Dom\\' => 12,
             'Laminas\\Di\\' => 11,
             'Laminas\\DevelopmentMode\\' => 24,
+            'Laminas\\DeveloperTools\\' => 23,
             'Laminas\\Db\\' => 11,
             'Laminas\\Config\\' => 15,
             'Laminas\\ComponentInstaller\\' => 27,
@@ -91,6 +96,14 @@ class ComposerStaticInita3244d27a7e85d1879656afd83deaa90
         'WebimpressCodingStandard\\' => 
         array (
             0 => __DIR__ . '/..' . '/webimpress/coding-standard/src/WebimpressCodingStandard',
+        ),
+        'Symfony\\Polyfill\\Mbstring\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
+        ),
+        'Symfony\\Component\\VarDumper\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/var-dumper',
         ),
         'SlevomatCodingStandard\\' => 
         array (
@@ -211,6 +224,10 @@ class ComposerStaticInita3244d27a7e85d1879656afd83deaa90
         'Laminas\\DevelopmentMode\\' => 
         array (
             0 => __DIR__ . '/..' . '/laminas/laminas-development-mode/src',
+        ),
+        'Laminas\\DeveloperTools\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laminas/laminas-developer-tools/src',
         ),
         'Laminas\\Db\\' => 
         array (

@@ -12,12 +12,17 @@ class TypeExample
 {
     /** @var Bar $bar */
     public $bar;
-    /** @var HydratorPluginManager $hydratorPluginManager */
-    protected $hydratorPluginManager;
+    /** @var array<string, mixed> $config */
+    protected $config;
+    /** @var HydratorPluginManager $hydratorManager */
+    protected $hydratorManager;
     /** @var ObjectPropertyHydrator $hydrator */
     protected $hydrator;
-    public function __construct(HydratorPluginManager $hydratorManager)
-    {
+    public function __construct(
+        HydratorPluginManager $hydratorManager,
+        array $config
+    ) {
+        $this->config          = $config;
         $this->hydratorManager = $hydratorManager;
         $this->hydrator        = $this->hydratorManager->get(ObjectPropertyHydrator::class);
     }

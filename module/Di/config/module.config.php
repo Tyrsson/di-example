@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Di;
 
 use Di\Service\TypeExample;
+use Laminas\Di\Resolver\TypeInjection;
 
 return [
     'dependencies' => [
@@ -17,6 +18,7 @@ return [
                     'preferences' => [],
                     'parameters'  => [
                         'hydratorPluginManager' => Service\HydratorPluginManager::class,
+                        'config'                => new TypeInjection('config'),
                     ],
                 ],
                 'MyClass.A'        => [
