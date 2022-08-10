@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Di;
 
+use Di\Injector;
 use Di\InjectorFactory;
 use Di\Service\TypeExample;
 use Laminas\Di\InjectorInterface;
@@ -12,7 +13,7 @@ use Laminas\Di\Resolver\TypeInjection;
 return [
     'service_manager' => [
         'aliases'   => [
-            'di'                     => InjectorInterface::class,
+            'di' => Injector::class,
         ],
         'factories' => [
             InjectorInterface::class => InjectorFactory::class,

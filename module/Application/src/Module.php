@@ -37,18 +37,25 @@ class Module
         $eventManager   = $e->getApplication()->getEventManager();
         // wire the listener, this is not related to the DI, its for another part of the example.
         $eventManager->attach(MvcEvent::EVENT_RENDER, [$this, 'registerJsonStrategy'], 100);
-        /** @var Injector $injector */
+        /**
+         * This is now a custom implementation of the Injector.
+         * It extends the Di\Injector class and provides some of the
+         * methods that were removed in version 3 of the Injector.
+         *
+         * See the Di\config\module.config.php for the override setup
+         * that facilitates the use of this class.
+         *
+         * @var Injector $injector */
         $injector = $serviceManager->get(Injector::class); // call the injector directly
         /**
-         * To see where the aliases and default configuration for the Di is setup see the below classes.
-         * /vendor/laminas/laminas-di/src/Module.php
-         * /vendor/laminas/laminas-di/src/ConfigProvider.php
-         *
-         * @var InjectorInterface $injectorInterface
+         * This is equivalent to calling the injector directly. as done above.
+         * This works because of the alias in the Di\config\module.config.php
          */
-        $injectorInterface = $serviceManager->get(InjectorInterface::class); // call the injector by its alias
-        // the Di is the injector
-        $di               = $injector; // this is really useless, but its just to show they are the same
+        $di      = $serviceManager->get('di');
+        $areSame = false;
+        if ($di === $injector) {
+            $areSame = true; // This is true because both are called from the same service manager.
+        }
         $bar              = $di->create(Bar::class); // get an instance of Bar
         $foo              = $di->create(Foo::class); // get an instance of Foo
         $myclassA         = $di->create('MyClass.A'); // get an instance of MyClass.A
