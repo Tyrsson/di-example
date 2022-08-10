@@ -182,7 +182,7 @@ class Injector implements InjectorInterface
         $containerTypes = [
             ContainerInterface::class,
             // Be backwards compatible with interop/container:
-            'Interop\Container\ContainerInterface', // phpcs:ignore 
+            'Interop\Container\ContainerInterface', // phpcs:ignore
         ];
 
         if (

@@ -16,7 +16,7 @@ use Application\Utils\Debug;
     </p>
     <?php
     if(isset($this->example)) {
-        Debug::dump($this->example, 'dump in index.phtml line: ' . __LINE__);
+        Debug::dump($this->example, 'dump of $this->example in index.phtml line: ' . __LINE__);
     }
     ?>
     <a href="/application/json">View rendered via Json</a>

@@ -11,6 +11,7 @@ namespace Application\Controller;
 use Application\Controller\Trait\JsonModelTrait;
 use Application\Model\ConcreteFactoryExample;
 use Application\View\Model\JsonModel;
+use Di\Service\TypeExample;
 use Laminas\Mvc\Controller\AbstractActionController;
 use Laminas\View\Model\ViewModel;
 
@@ -20,18 +21,23 @@ class IndexController extends AbstractActionController
 {
     use JsonModelTrait;
 
+    /** @var ConcreteFactoryExample $example */
+    protected $example;
+    /** @var TypeExample $typeExample */
+    protected $typeExample;
     /** @var bool $useTrait */
     private $useTrait = false;
 
     /** @var ConcreteFactoryExample $example */
-    public function __construct(ConcreteFactoryExample $example)
+    public function __construct(ConcreteFactoryExample $example, TypeExample $typeExample)
     {
-        $this->example = $example;
+        $this->example     = $example;
+        $this->typeExample = $typeExample;
     }
 
     public function indexAction(): ViewModel
     {
-        return new ViewModel(['example' => $this->example]);
+        return new ViewModel(['example' => $this->example, 'typeExample' => $this->typeExample]);
     }
 
     /** @return JsonModel */

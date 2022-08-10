@@ -13,12 +13,11 @@ declare(strict_types=1);
 namespace Application;
 
 use Application\View\Strategy\JsonStrategy;
-use Application\Utils\Debug;
+use Di\Injector;
 use Di\Service\Bar;
 use Di\Service\Foo;
 use Di\Service\MyFactoryExample;
 use Di\Service\TypeExample;
-use Laminas\Di\Injector;
 use Laminas\Di\InjectorInterface;
 use Laminas\Mvc\MvcEvent;
 use Laminas\View\View;
@@ -67,6 +66,7 @@ class Module
          */
         $typeExample = $di->create(TypeExample::class);
         $typeExample->hydrateBar($barData, $bar);
+        $definitions = $di->definitions(); // get the definitions
     }
 
     public function registerJsonStrategy(MvcEvent $e)

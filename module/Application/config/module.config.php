@@ -21,7 +21,6 @@ declare(strict_types=1);
 
 namespace Application;
 
-use Laminas\Di\InjectorInterface;
 use Laminas\Mvc\Controller\LazyControllerAbstractFactory;
 use Laminas\Router\Http\Literal;
 use Laminas\Router\Http\Segment;
@@ -29,9 +28,6 @@ use Laminas\ServiceManager\Factory\InvokableFactory;
 
 return [
     'service_manager' => [
-        'aliases'   => [
-            'di' => InjectorInterface::class,
-        ],
         'factories' => [
             Model\ConcreteFactoryExample::class => Model\Factory\ConcreteFactoryExampleFactory::class,
             Model\Example::class                => InvokableFactory::class,
