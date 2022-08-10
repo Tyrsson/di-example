@@ -6,8 +6,12 @@ namespace Di\Service;
 
 final class Bar
 {
+    /** @var string $foo */
+    public $foo;
+    /** @var string $otherFoo */
+    public $otherFoo;
     public function getFoo(): string
     {
-        return 'bar';
+        return $this->foo;
     }
 }

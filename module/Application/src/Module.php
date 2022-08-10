@@ -13,9 +13,11 @@ declare(strict_types=1);
 namespace Application;
 
 use Application\View\Strategy\JsonStrategy;
+use Application\Utils\Debug;
 use Di\Service\Bar;
 use Di\Service\Foo;
 use Di\Service\MyFactoryExample;
+use Di\Service\TypeExample;
 use Laminas\Di\Injector;
 use Laminas\Di\InjectorInterface;
 use Laminas\Mvc\MvcEvent;
@@ -54,6 +56,17 @@ class Module
         $myclassB         = $di->create('MyClass.B'); // get an instance of MyClass.B
         $myFactoryExample = $di->create(MyFactoryExample::class); // this works because the Di autowire factory jumped in to autowire it.
         //$myFactoryExample = $di->create('MyFactoryExample'); // This will fail because its not in the config
+        $barData = [
+            'foo'      => 'some value for foo',
+            'otherFoo' => 'some value for otherFoo',
+        ];
+        /**
+         * The notable part of this is that TypeExample does not have a concrete factory
+         * You will need to read the docs very closely in respect to what is required and the
+         * in which the Di checks, and what it does based on what is found.
+         */
+        $typeExample = $di->create(TypeExample::class);
+        $typeExample->hydrateBar($barData, $bar);
     }
 
     public function registerJsonStrategy(MvcEvent $e)
