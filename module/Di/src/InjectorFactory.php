@@ -4,17 +4,16 @@ declare(strict_types=1);
 
 namespace Di;
 
-use Laminas\Di\Injector;
-use Laminas\Di\Container\InjectorFactory as LaminasDiInjectorFactory;
-use Laminas\Di\InjectorInterface;
 use Laminas\Di\ConfigInterface;
+use Laminas\Di\Container\InjectorFactory as LaminasDiInjectorFactory;
+use Laminas\Di\Injector;
+use Laminas\Di\InjectorInterface;
 use Psr\Container\ContainerInterface;
-use Zend\Di\ConfigInterface as LegacyConfigInterace;
 
 class InjectorFactory extends LaminasDiInjectorFactory
 {
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public function create(ContainerInterface $container): InjectorInterface
     {

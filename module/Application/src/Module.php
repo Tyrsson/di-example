@@ -12,6 +12,7 @@ declare(strict_types=1);
 
 namespace Application;
 
+use Application\Model\ConcreteFactoryExample;
 use Application\View\Strategy\JsonStrategy;
 use Di\Injector;
 use Di\Service\Bar;
@@ -74,6 +75,9 @@ class Module
         $typeExample = $di->create(TypeExample::class);
         $typeExample->hydrateBar($barData, $bar);
         $definitions = $di->definitions(); // get the definitions
+        $instanceOne = $di->get('MyClass.A'); // get an instance of MyClass.A
+        $instanceTwo = $di->get(ConcreteFactoryExample::class);
+        $config      = $di->getConfig();
     }
 
     public function registerJsonStrategy(MvcEvent $e)

@@ -49,9 +49,5 @@ class IndexController extends AbstractActionController
                 'data'       => $this->example,
             ]);
         }
-        // return $this->jsonModel([
-        //     'instanceOf' => get_class($this->example),
-        //     'data'       => $this->example,
-        // ]);
     }
 }

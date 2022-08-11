@@ -29,7 +29,7 @@ return [
                     'preferences' => [],
                     'parameters'  => [
                         'hydratorPluginManager' => Service\HydratorPluginManager::class,
-                        'config'                => new TypeInjection('config'),
+                        'config'                => new TypeInjection('config'), // insures no lookup is performed
                     ],
                 ],
                 'MyClass.A'        => [
