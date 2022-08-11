@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Di;
 
 use Di\Exception\ConfigInterfaceNotInitializedException;
+use Di\Exception\ContainerNotFoundException;
 use Di\Exception\EmptyConfigException;
 use Di\Exception\ServiceCantNotBeReturnedException;
 use Di\Exception\UnSupportedContainerException;
@@ -14,6 +15,7 @@ use Laminas\Di\Definition\DefinitionInterface;
 use Laminas\Di\Definition\RuntimeDefinition;
 use Laminas\Di\Exception\ClassNotFoundException;
 use Laminas\Di\Injector as LaminasInjector;
+use Laminas\ServiceManager\Exception\ServiceNotCreatedException;
 use Psr\Container\ContainerInterface;
 use RuntimeException;
 
@@ -35,7 +37,8 @@ final class Injector extends LaminasInjector
      * Laminas\Di\DefaultContainer usuage is not supported.
      *
      * @throws ClassNotFoundException
-     * @throws RuntimeException
+     * @throws ContainerNotFoundException
+     * @throws ServiceNotCreatedException
      * @throws ServiceCantNotBeReturnedException
      * @throws UnSupportedContainerException
      * @return mixed Entry.
@@ -49,7 +52,7 @@ final class Injector extends LaminasInjector
              * This is to insure that we have an instance if you use this in ways I can not forsee
              */
             if (empty($this->container)) {
-                throw new RuntimeException('Di\Injector does not have a container set');
+                throw new ContainerNotFoundException('Di\Injector does not have a container set');
             }
             // insure we only work with the Psr\Container\ContainerInterface
             if ($this->container instanceof DefaultContainer) {
@@ -74,6 +77,7 @@ final class Injector extends LaminasInjector
                 );
             }
             if ($this->container->has($name)) {
+                // This call could still potentioally throw an exception, such as if the service can not be created
                 return $this->container->get($name);
             } else {
                 return $this->get($name, false);
@@ -114,7 +118,7 @@ final class Injector extends LaminasInjector
                     || $this->container->get('config')['dependencies']['auto'] === []
                 ) {
                     throw new EmptyConfigException(
-                        'You have not configured the Di\Injector'
+                        'Di\Injector is incorrectly configured or the confuration is missing or empty'
                     );
                 }
             }
