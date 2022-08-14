@@ -26,12 +26,15 @@
         "laminas/laminas-permissions-acl": "^2.10",
         "laminas/laminas-authentication": "^2.11",
         "laminas/laminas-mvc-form": "^2.0",
-        "laminas/laminas-developer-tools": "^2.3"
+        "laminas/laminas-developer-tools": "^2.3",
+        "laminas/laminas-cli": "^1.5"
     },
     "autoload": {
         "psr-4": {
             "Application\\": "module/Application/src/",
-            "Di\\": "module/Di/src/"
+            "Di\\": "module/Di/src/",
+            "ConfigConverter\\": "module/ConfigConverter/src/",
+            "Test\\": "module/Test/src/"
         }
     },
     "autoload-dev": {

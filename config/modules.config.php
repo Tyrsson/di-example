@@ -18,4 +18,6 @@ return [
     'Laminas\Validator',
     'Application',
     'Di',
+    'ConfigConverter',
+    'Test',
 ];

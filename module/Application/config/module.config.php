@@ -25,6 +25,7 @@ use Laminas\Mvc\Controller\LazyControllerAbstractFactory;
 use Laminas\Router\Http\Literal;
 use Laminas\Router\Http\Segment;
 use Laminas\ServiceManager\Factory\InvokableFactory;
+use Test\Controller\IndexController;
 
 return [
     'service_manager' => [
@@ -51,6 +52,16 @@ return [
                     'route'    => '/application[/:action]',
                     'defaults' => [
                         'controller' => Controller\IndexController::class,
+                        'action'     => 'index',
+                    ],
+                ],
+            ],
+            'test' => [
+                'type'    => Literal::class,
+                'options' => [
+                    'route'    => '/test',
+                    'defaults' => [
+                        'controller' => IndexController::class,
                         'action'     => 'index',
                     ],
                 ],
