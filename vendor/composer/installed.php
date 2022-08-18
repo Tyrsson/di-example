@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'e683f4e1b48fe131bede6b6a275ab4e32401710d',
+        'reference' => 'c8d119a6b18cf36742a759193c164fb047fafec1',
         'name' => 'laminas/laminas-mvc-skeleton',
         'dev' => true,
     ),
@@ -60,6 +60,39 @@
             'aliases' => array(),
             'reference' => '51815691d862b82b749a4aa9c4f6ec078d579f74',
             'dev_requirement' => false,
+        ),
+        'laminas/laminas-cache' => array(
+            'pretty_version' => '3.4.0',
+            'version' => '3.4.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../laminas/laminas-cache',
+            'aliases' => array(),
+            'reference' => 'f3745657cf54e162cb39f8348967ff25bf10eb77',
+            'dev_requirement' => false,
+        ),
+        'laminas/laminas-cache-storage-adapter-redis' => array(
+            'pretty_version' => '1.2.0',
+            'version' => '1.2.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../laminas/laminas-cache-storage-adapter-redis',
+            'aliases' => array(),
+            'reference' => 'de8a63d4a0ef1ccead401eb7fb6d75b57fa3f9ee',
+            'dev_requirement' => false,
+        ),
+        'laminas/laminas-cache-storage-adapter-session' => array(
+            'pretty_version' => '2.0.0',
+            'version' => '2.0.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../laminas/laminas-cache-storage-adapter-session',
+            'aliases' => array(),
+            'reference' => '3c7c5a02a1f57af8c8f0a7e1fda0b9b745494e58',
+            'dev_requirement' => false,
+        ),
+        'laminas/laminas-cache-storage-implementation' => array(
+            'dev_requirement' => false,
+            'provided' => array(
+                0 => '1.0',
+            ),
         ),
         'laminas/laminas-coding-standard' => array(
             'pretty_version' => '2.3.0',
@@ -256,7 +289,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'e683f4e1b48fe131bede6b6a275ab4e32401710d',
+            'reference' => 'c8d119a6b18cf36742a759193c164fb047fafec1',
             'dev_requirement' => false,
         ),
         'laminas/laminas-permissions-acl' => array(
@@ -359,13 +392,19 @@
             'dev_requirement' => false,
         ),
         'psr/cache' => array(
-            'pretty_version' => '3.0.0',
-            'version' => '3.0.0.0',
+            'pretty_version' => '1.0.1',
+            'version' => '1.0.1.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../psr/cache',
             'aliases' => array(),
-            'reference' => 'aa5030cfa5405eccfdcb1083ce040c2cb8d253bf',
+            'reference' => 'd11b50ad223250cf17b86e38383413f5a6764bf8',
             'dev_requirement' => false,
+        ),
+        'psr/cache-implementation' => array(
+            'dev_requirement' => false,
+            'provided' => array(
+                0 => '1.0',
+            ),
         ),
         'psr/container' => array(
             'pretty_version' => '1.1.2',
@@ -391,6 +430,21 @@
             'reference' => 'fe5ea303b0887d5caefd3d431c3e61ad47037001',
             'dev_requirement' => false,
         ),
+        'psr/simple-cache' => array(
+            'pretty_version' => '1.0.1',
+            'version' => '1.0.1.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../psr/simple-cache',
+            'aliases' => array(),
+            'reference' => '408d5eafb83c57f6365a3ca330ff23aa4a5fa39b',
+            'dev_requirement' => false,
+        ),
+        'psr/simple-cache-implementation' => array(
+            'dev_requirement' => false,
+            'provided' => array(
+                0 => '1.0',
+            ),
+        ),
         'slevomat/coding-standard' => array(
             'pretty_version' => '7.2.1',
             'version' => '7.2.1.0',
@@ -407,6 +461,15 @@
             'install_path' => __DIR__ . '/../squizlabs/php_codesniffer',
             'aliases' => array(),
             'reference' => '1359e176e9307e906dc3d890bcc9603ff6d90619',
+            'dev_requirement' => false,
+        ),
+        'stella-maris/clock' => array(
+            'pretty_version' => '0.1.5',
+            'version' => '0.1.5.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../stella-maris/clock',
+            'aliases' => array(),
+            'reference' => '447879c53ca0b2a762cdbfba5e76ccf4deca9158',
             'dev_requirement' => false,
         ),
         'symfony/polyfill-mbstring' => array(

@@ -78,6 +78,7 @@ class Module
         $instanceOne = $di->get('MyClass.A'); // get an instance of MyClass.A
         $instanceTwo = $di->get(ConcreteFactoryExample::class);
         $config      = $di->getConfig();
+        $sessionManager = $di->create('session_manager'); // get an instance of the session manager
     }
 
     public function registerJsonStrategy(MvcEvent $e)

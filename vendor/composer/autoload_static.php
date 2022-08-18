@@ -23,10 +23,12 @@ class ComposerStaticInita3244d27a7e85d1879656afd83deaa90
         array (
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Component\\VarDumper\\' => 28,
+            'StellaMaris\\Clock\\' => 18,
             'SlevomatCodingStandard\\' => 23,
         ),
         'P' => 
         array (
+            'Psr\\SimpleCache\\' => 16,
             'Psr\\Log\\' => 8,
             'Psr\\Container\\' => 14,
             'Psr\\Cache\\' => 10,
@@ -63,6 +65,8 @@ class ComposerStaticInita3244d27a7e85d1879656afd83deaa90
             'Laminas\\Db\\' => 11,
             'Laminas\\Config\\' => 15,
             'Laminas\\ComponentInstaller\\' => 27,
+            'Laminas\\Cache\\Storage\\Adapter\\' => 30,
+            'Laminas\\Cache\\' => 14,
             'Laminas\\Authentication\\' => 23,
             'LaminasCodingStandard\\' => 22,
         ),
@@ -105,9 +109,17 @@ class ComposerStaticInita3244d27a7e85d1879656afd83deaa90
         array (
             0 => __DIR__ . '/..' . '/symfony/var-dumper',
         ),
+        'StellaMaris\\Clock\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/stella-maris/clock/src',
+        ),
         'SlevomatCodingStandard\\' => 
         array (
             0 => __DIR__ . '/..' . '/slevomat/coding-standard/SlevomatCodingStandard',
+        ),
+        'Psr\\SimpleCache\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/simple-cache/src',
         ),
         'Psr\\Log\\' => 
         array (
@@ -240,6 +252,15 @@ class ComposerStaticInita3244d27a7e85d1879656afd83deaa90
         'Laminas\\ComponentInstaller\\' => 
         array (
             0 => __DIR__ . '/..' . '/laminas/laminas-component-installer/src',
+        ),
+        'Laminas\\Cache\\Storage\\Adapter\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laminas/laminas-cache-storage-adapter-redis/src',
+            1 => __DIR__ . '/..' . '/laminas/laminas-cache-storage-adapter-session/src',
+        ),
+        'Laminas\\Cache\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laminas/laminas-cache/src',
         ),
         'Laminas\\Authentication\\' => 
         array (
