@@ -79,6 +79,7 @@ class Module
         $instanceTwo = $di->get(ConcreteFactoryExample::class);
         $config      = $di->getConfig();
         $sessionManager = $di->create('session_manager'); // get an instance of the session manager
+        $mysqli         = $di->create('db_adapter'); // get an instance of the db adapter
     }
 
     public function registerJsonStrategy(MvcEvent $e)
